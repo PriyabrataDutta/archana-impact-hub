@@ -13,10 +13,33 @@ const highlights = [
 ];
 
 const AboutSection = () => (
-  <section id="about" className="py-28 bg-background">
-    <div className="max-w-7xl mx-auto px-6 lg:px-12">
-      <div className="grid lg:grid-cols-12 gap-16 items-start">
-        <div className="lg:col-span-5">
+  <section id="about" className="py-16 md:py-28 bg-background">
+    <div className="max-w-7xl mx-auto px-5 lg:px-12">
+      {/* Mobile: image first with overlay stat */}
+      <div className="lg:hidden mb-10">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          <img
+            src={eyeCare}
+            alt="Eye care camp"
+            className="w-full object-cover aspect-[16/10]"
+            loading="lazy"
+            width={800}
+            height={600}
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent px-5 pb-5 pt-12">
+            <div className="font-display text-3xl text-primary-foreground">15+</div>
+            <p className="text-primary-foreground/70 text-xs tracking-widest uppercase">Years of Impact</p>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="hidden lg:block lg:col-span-5">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +55,7 @@ const AboutSection = () => (
               width={800}
               height={600}
             />
-            <div className="absolute -bottom-6 -right-6 bg-primary px-8 py-6 hidden md:block">
+            <div className="absolute -bottom-6 -right-6 bg-primary px-8 py-6">
               <div className="font-display text-4xl text-primary-foreground">15+</div>
               <p className="text-primary-foreground/70 text-xs tracking-widest uppercase mt-1">Years of Impact</p>
             </div>
@@ -50,12 +73,12 @@ const AboutSection = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <p className="text-muted-foreground leading-relaxed mb-8">
+            <p className="text-muted-foreground leading-relaxed mb-8 text-[15px]">
               Over the past 15 years, we have positively impacted thousands of lives,
               building deep trust within communities and creating sustainable service models
               that deliver measurable, lasting change.
             </p>
-            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 md:gap-y-3">
               {highlights.map((item) => (
                 <div key={item} className="flex items-start gap-3 py-2">
                   <Check className="w-4 h-4 text-accent-warm mt-0.5 flex-shrink-0" />

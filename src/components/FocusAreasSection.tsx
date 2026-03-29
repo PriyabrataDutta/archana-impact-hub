@@ -26,14 +26,36 @@ const areas: { icon: LucideIcon; title: string; description: string }[] = [
 ];
 
 const FocusAreasSection = () => (
-  <section id="focus" className="py-28 bg-surface-alt">
-    <div className="max-w-7xl mx-auto px-6 lg:px-12">
+  <section id="focus" className="py-16 md:py-28 bg-surface-alt">
+    <div className="max-w-7xl mx-auto px-5 lg:px-12">
       <SectionHeading
         label="What We Do"
         title="Our Focus Areas"
         subtitle="Integrated healthcare and educational support for India's underserved communities."
       />
-      <div className="grid md:grid-cols-2 gap-px bg-border mt-4">
+      {/* Mobile: stacked full-width cards with left accent */}
+      <div className="md:hidden space-y-4 mt-4">
+        {areas.map((area, i) => (
+          <motion.div
+            key={area.title}
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            className="border-l-2 border-accent-warm bg-background p-5 flex gap-4"
+          >
+            <div className="w-10 h-10 border border-border flex items-center justify-center flex-shrink-0">
+              <area.icon className="w-4 h-4 text-accent-warm" />
+            </div>
+            <div>
+              <h3 className="font-display text-lg text-foreground mb-1">{area.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{area.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+      {/* Desktop: grid */}
+      <div className="hidden md:grid md:grid-cols-2 gap-px bg-border mt-4">
         {areas.map((area, i) => (
           <motion.div
             key={area.title}
