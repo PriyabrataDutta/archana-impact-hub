@@ -95,7 +95,7 @@ const HeroSection = () => (
       transition={{ delay: 1.2 }}
       className="absolute bottom-3 md:bottom-8 left-1/2 -translate-x-1/2 text-hero-foreground/40 hover:text-hero-foreground/70 transition-colors hidden md:block"
     >
-      <ArrowDown className="w-5 h-5 animate-bounce" />
+      <ArrowDown className="w-6 h-6 animate-bounce" />
     </motion.a>
   </section>
 );

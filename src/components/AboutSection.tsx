@@ -81,7 +81,7 @@ const AboutSection = () => (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 md:gap-y-3">
               {highlights.map((item) => (
                 <div key={item} className="flex items-start gap-3 py-2">
-                  <Check className="w-4 h-4 text-accent-warm mt-0.5 flex-shrink-0" />
+                  <Check className="w-5 h-5 text-accent-warm mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-foreground">{item}</span>
                 </div>
               ))}

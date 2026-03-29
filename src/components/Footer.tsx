@@ -3,8 +3,8 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-6 lg:px-12">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8 pb-8 border-b border-background/10">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-accent-warm flex items-center justify-center">
-            <span className="font-display text-sm font-bold text-accent-foreground">A</span>
+          <div className="w-10 h-10 rounded-full bg-accent-warm flex items-center justify-center">
+            <span className="font-display text-base font-bold text-accent-foreground">A</span>
           </div>
           <span className="font-display text-lg text-background tracking-tight">Archana Foundation</span>
         </div>

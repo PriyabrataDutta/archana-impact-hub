@@ -37,7 +37,7 @@ const CSRSection = () => (
             Archana Foundation is eligible under Section 80G, enabling tax benefits for all donors.
           </motion.p>
           <div className="flex items-center gap-3 p-4 bg-primary/5 border-l-2 border-accent-warm rounded-lg">
-            <ShieldCheck className="w-5 h-5 text-primary flex-shrink-0" />
+            <ShieldCheck className="w-6 h-6 text-primary flex-shrink-0" />
             <span className="text-sm text-foreground font-medium">Section 80G certified for tax benefits</span>
           </div>
         </div>
@@ -55,7 +55,7 @@ const CSRSection = () => (
               <div className="space-y-3">
                 {csrItems.map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <Check className="w-3.5 h-3.5 text-accent-warm flex-shrink-0" />
+                    <Check className="w-4 h-4 text-accent-warm flex-shrink-0" />
                     <span className="text-sm text-foreground">{item}</span>
                   </div>
                 ))}
@@ -73,7 +73,7 @@ const CSRSection = () => (
               <div className="space-y-3">
                 {trustItems.map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <Check className="w-3.5 h-3.5 text-accent-warm flex-shrink-0" />
+                    <Check className="w-4 h-4 text-accent-warm flex-shrink-0" />
                     <span className="text-sm text-foreground">{item}</span>
                   </div>
                 ))}
