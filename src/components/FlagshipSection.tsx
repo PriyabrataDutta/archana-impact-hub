@@ -1,68 +1,68 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
-import { Eye, Glasses, Search, Shield, Ear, Smile, Megaphone, Monitor, Stethoscope, Truck } from "lucide-react";
+import { Eye, Glasses, Search, Shield, Megaphone, Monitor, Stethoscope, Truck, ArrowRight } from "lucide-react";
 
 const services = [
   { icon: Eye, text: "Eye screening & vision care" },
   { icon: Glasses, text: "Spectacle distribution" },
   { icon: Search, text: "Cataract detection & referral" },
   { icon: Shield, text: "Glaucoma & diabetic retinopathy screening" },
-  { icon: Ear, text: "ENT evaluation & basic treatment" },
-  { icon: Smile, text: "Dental screening & oral health awareness" },
   { icon: Megaphone, text: "Preventive health education" },
 ];
 
 const techItems = [
-  { icon: Monitor, text: "Portable eye diagnostic devices" },
-  { icon: Stethoscope, text: "ENT examination tools" },
-  { icon: Smile, text: "Dental screening kits" },
-  { icon: Truck, text: "Mobile medical units" },
+  "Portable eye diagnostic devices",
+  "ENT examination tools",
+  "Dental screening kits",
+  "Mobile medical units",
+  "On-site dispensing systems",
 ];
 
 const FlagshipSection = () => (
-  <section className="py-24 bg-background">
-    <div className="container mx-auto px-4">
+  <section className="py-28 bg-background">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12">
       <SectionHeading
-        label="Our Flagship"
+        label="Our Flagship Initiative"
         title="Community Vision for All"
         subtitle="A multi-specialty outreach model delivering comprehensive healthcare directly to communities."
       />
-      <div className="grid md:grid-cols-2 gap-12 mt-8">
+      <div className="grid lg:grid-cols-12 gap-16 mt-4">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
+          className="lg:col-span-7"
         >
-          <h3 className="font-display text-xl font-semibold text-foreground mb-6">Key Services</h3>
-          <div className="space-y-4">
+          <h3 className="text-xs font-semibold tracking-[0.25em] uppercase text-muted-foreground mb-6">Key Services</h3>
+          <div className="space-y-0 divide-y divide-border">
             {services.map((s) => (
-              <div key={s.text} className="flex items-center gap-3">
-                <div className="p-2 rounded-md bg-primary/10">
-                  <s.icon className="w-4 h-4 text-primary" />
-                </div>
-                <span className="text-muted-foreground">{s.text}</span>
+              <div key={s.text} className="flex items-center gap-4 py-4 group">
+                <s.icon className="w-4 h-4 text-muted-foreground group-hover:text-accent-warm transition-colors flex-shrink-0" />
+                <span className="text-foreground text-[15px]">{s.text}</span>
               </div>
             ))}
           </div>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="lg:col-span-5 bg-primary p-10"
         >
-          <h3 className="font-display text-xl font-semibold text-foreground mb-6">Technology-Enabled Outreach</h3>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
-            We leverage advanced portable medical equipment to ensure hospital-level diagnostics in community settings, enabling early diagnosis, immediate intervention, and better outcomes.
+          <h3 className="text-xs font-semibold tracking-[0.25em] uppercase text-primary-foreground/60 mb-6">
+            Technology-Enabled
+          </h3>
+          <p className="text-primary-foreground/80 leading-relaxed mb-8 text-[15px]">
+            We leverage advanced portable medical equipment to ensure hospital-level
+            diagnostics in community settings.
           </p>
           <div className="space-y-4">
             {techItems.map((t) => (
-              <div key={t.text} className="flex items-center gap-3">
-                <div className="p-2 rounded-md bg-accent-warm/10">
-                  <t.icon className="w-4 h-4 text-accent-warm" />
-                </div>
-                <span className="text-muted-foreground">{t.text}</span>
+              <div key={t} className="flex items-center gap-3">
+                <ArrowRight className="w-3 h-3 text-accent-warm flex-shrink-0" />
+                <span className="text-primary-foreground/90 text-sm">{t}</span>
               </div>
             ))}
           </div>

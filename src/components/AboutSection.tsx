@@ -1,63 +1,70 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
 import eyeCare from "@/assets/eye-care.jpg";
-import { Heart, BookOpen, Users, Stethoscope } from "lucide-react";
+import { Check } from "lucide-react";
 
 const highlights = [
-  { icon: Stethoscope, text: "Free medical screening camps" },
-  { icon: Heart, text: "Preventive health awareness" },
-  { icon: BookOpen, text: "Educational support for students" },
-  { icon: Users, text: "Collaborative public health programs" },
+  "Free medical screening camps",
+  "Preventive health awareness programs",
+  "Eye, ENT, and dental care initiatives",
+  "Educational support for deserving students",
+  "Support for free hostels providing food & education",
+  "Collaborative public health & welfare programs",
 ];
 
 const AboutSection = () => (
-  <section id="about" className="py-24 bg-background">
-    <div className="container mx-auto px-4">
-      <SectionHeading
-        label="Our Legacy"
-        title="About Archana Foundation"
-        subtitle="A 15-year-old registered charitable trust committed to advancing equitable access to healthcare, education, and social welfare."
-      />
-      <div className="grid md:grid-cols-2 gap-12 items-center mt-8">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <img
-            src={eyeCare}
-            alt="Eye care camp"
-            className="rounded-lg shadow-lg w-full object-cover aspect-[4/3]"
-            loading="lazy"
-            width={800}
-            height={600}
+  <section id="about" className="py-28 bg-background">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="grid lg:grid-cols-12 gap-16 items-start">
+        <div className="lg:col-span-5">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <img
+              src={eyeCare}
+              alt="Eye care camp"
+              className="w-full object-cover aspect-[3/4]"
+              loading="lazy"
+              width={800}
+              height={600}
+            />
+            <div className="absolute -bottom-6 -right-6 bg-primary px-8 py-6 hidden md:block">
+              <div className="font-display text-4xl text-primary-foreground">15+</div>
+              <p className="text-primary-foreground/70 text-xs tracking-widest uppercase mt-1">Years of Impact</p>
+            </div>
+          </motion.div>
+        </div>
+        <div className="lg:col-span-7">
+          <SectionHeading
+            label="Our Legacy"
+            title="Committed to Equitable Access"
+            subtitle="Archana Foundation is a registered charitable trust advancing healthcare, education, and social welfare across India's underserved communities."
           />
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-6"
-        >
-          <p className="text-muted-foreground leading-relaxed">
-            With a strong legacy of service, Archana Foundation has consistently created meaningful impact through free medical camps, preventive health programs, eye, ENT, and dental care initiatives, educational support, and free hostel facilities providing food and education.
-          </p>
-          <p className="text-muted-foreground leading-relaxed">
-            Over the past <span className="font-semibold text-primary">15 years</span>, we have positively impacted <span className="font-semibold text-primary">thousands of lives</span>, building deep trust within communities and creating sustainable service models.
-          </p>
-          <div className="grid grid-cols-2 gap-4 pt-4">
-            {highlights.map((h) => (
-              <div key={h.text} className="flex items-start gap-3">
-                <div className="mt-1 p-2 rounded-md bg-primary/10">
-                  <h.icon className="w-4 h-4 text-primary" />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              Over the past 15 years, we have positively impacted thousands of lives,
+              building deep trust within communities and creating sustainable service models
+              that deliver measurable, lasting change.
+            </p>
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+              {highlights.map((item) => (
+                <div key={item} className="flex items-start gap-3 py-2">
+                  <Check className="w-4 h-4 text-accent-warm mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-foreground">{item}</span>
                 </div>
-                <span className="text-sm text-foreground">{h.text}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   </section>

@@ -5,30 +5,33 @@ interface SectionHeadingProps {
   title: string;
   subtitle?: string;
   light?: boolean;
+  align?: "left" | "center";
 }
 
-const SectionHeading = ({ label, title, subtitle, light }: SectionHeadingProps) => (
+const SectionHeading = ({ label, title, subtitle, light, align = "left" }: SectionHeadingProps) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 16 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-80px" }}
+    viewport={{ once: true, margin: "-60px" }}
     transition={{ duration: 0.5 }}
-    className="text-center mb-14"
+    className={`mb-16 ${align === "center" ? "text-center" : ""}`}
   >
     {label && (
-      <p className="text-accent-warm font-semibold tracking-widest uppercase text-xs mb-3">
-        {label}
-      </p>
+      <div className={`flex items-center gap-3 mb-4 ${align === "center" ? "justify-center" : ""}`}>
+        <div className="w-8 h-[1px] bg-accent-warm" />
+        <p className="text-accent-warm text-[11px] font-semibold tracking-[0.25em] uppercase">
+          {label}
+        </p>
+      </div>
     )}
-    <h2 className={`font-display text-3xl md:text-4xl font-bold mb-4 ${light ? "text-hero-foreground" : "text-foreground"}`}>
+    <h2 className={`font-display text-3xl md:text-[2.75rem] leading-tight tracking-tight mb-4 ${light ? "text-hero-foreground" : "text-foreground"}`}>
       {title}
     </h2>
     {subtitle && (
-      <p className={`max-w-2xl mx-auto text-base ${light ? "text-hero-foreground/70" : "text-muted-foreground"}`}>
+      <p className={`max-w-2xl text-base leading-relaxed ${align === "center" ? "mx-auto" : ""} ${light ? "text-hero-foreground/60" : "text-muted-foreground"}`}>
         {subtitle}
       </p>
     )}
-    <div className="mt-4 w-16 h-1 bg-accent-warm mx-auto rounded-full" />
   </motion.div>
 );
 
