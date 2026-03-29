@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="max-w-7xl mx-auto px-6 lg:px-12">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8 pb-8 border-b border-background/10">
         <div className="flex items-center gap-3">
-          <img src={logoIcon} alt="Archana Foundation" className="w-10 h-10 object-contain brightness-0 invert" />
+          <img src={logoIcon} alt="Archana Foundation" className="w-12 h-12 object-contain brightness-0 invert" />
           <span className="font-display text-lg text-background tracking-tight">Archana Foundation</span>
         </div>
         <div className="flex flex-wrap gap-8">
