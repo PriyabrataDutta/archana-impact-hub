@@ -36,7 +36,7 @@ const CSRSection = () => (
             Our initiatives align with Schedule VII of the Companies Act, 2013.
             Archana Foundation is eligible under Section 80G, enabling tax benefits for all donors.
           </motion.p>
-          <div className="flex items-center gap-3 p-4 bg-primary/5 border-l-2 border-accent-warm">
+          <div className="flex items-center gap-3 p-4 bg-primary/5 border-l-2 border-accent-warm rounded-lg">
             <ShieldCheck className="w-5 h-5 text-primary flex-shrink-0" />
             <span className="text-sm text-foreground font-medium">Section 80G certified for tax benefits</span>
           </div>
