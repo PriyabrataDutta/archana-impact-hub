@@ -24,7 +24,7 @@ const PartnerSection = () => (
           </p>
           <div className="flex flex-wrap gap-2 md:gap-3">
             {["Restore Sight", "Improve Health", "Enable Education", "Transform Lives"].map((item) => (
-              <span key={item} className="border border-primary-foreground/20 text-primary-foreground/80 px-3 md:px-4 py-2 text-[10px] md:text-xs tracking-widest uppercase">
+              <span key={item} className="border border-primary-foreground/20 text-primary-foreground/80 px-3 md:px-4 py-2 text-[10px] md:text-xs tracking-widest uppercase rounded-full">
                 {item}
               </span>
             ))}
@@ -35,7 +35,7 @@ const PartnerSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="lg:col-span-6 bg-primary-foreground/5 border border-primary-foreground/10 p-6 md:p-10"
+          className="lg:col-span-6 bg-primary-foreground/5 border border-primary-foreground/10 p-6 md:p-10 rounded-xl"
         >
           <h3 className="font-display text-xl md:text-2xl text-primary-foreground mb-6 md:mb-8">Contact Us</h3>
           <div className="space-y-5 md:space-y-6 mb-8 md:mb-10">
@@ -56,7 +56,7 @@ const PartnerSection = () => (
           </div>
           <a
             href="mailto:info@archanafoundation.org"
-            className="flex items-center justify-center gap-2 w-full bg-accent-warm text-accent-foreground px-8 py-4 font-semibold text-[15px] tracking-wide hover:brightness-110 transition-all"
+            className="flex items-center justify-center gap-2 w-full bg-accent-warm text-accent-foreground px-8 py-4 font-semibold text-[15px] tracking-wide hover:brightness-110 transition-all rounded-lg"
           >
             Reach Out Today <ArrowRight className="w-4 h-4" />
           </a>

@@ -31,7 +31,7 @@ const TimelineSection = () => (
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="w-[260px] flex-shrink-0 border border-border p-5 relative"
+              className="w-[260px] flex-shrink-0 border border-border p-5 relative rounded-xl overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-warm to-accent-warm/30" />
               <span className="font-display text-3xl text-accent-warm">{m.year}</span>

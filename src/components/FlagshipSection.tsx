@@ -49,7 +49,7 @@ const FlagshipSection = () => (
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="lg:col-span-5 bg-primary p-10"
+          className="lg:col-span-5 bg-primary p-10 rounded-xl"
         >
           <h3 className="text-xs font-semibold tracking-[0.25em] uppercase text-primary-foreground/60 mb-6">
             Technology-Enabled

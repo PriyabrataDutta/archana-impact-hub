@@ -42,9 +42,9 @@ const FocusAreasSection = () => (
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="border-l-2 border-accent-warm bg-background p-5 flex gap-4"
+            className="border-l-2 border-accent-warm bg-background p-5 flex gap-4 rounded-lg"
           >
-            <div className="w-10 h-10 border border-border flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 border border-border flex items-center justify-center flex-shrink-0 rounded-lg">
               <area.icon className="w-4 h-4 text-accent-warm" />
             </div>
             <div>
@@ -55,7 +55,7 @@ const FocusAreasSection = () => (
         ))}
       </div>
       {/* Desktop: grid */}
-      <div className="hidden md:grid md:grid-cols-2 gap-px bg-border mt-4">
+      <div className="hidden md:grid md:grid-cols-2 gap-px bg-border mt-4 rounded-xl overflow-hidden">
         {areas.map((area, i) => (
           <motion.div
             key={area.title}
@@ -66,7 +66,7 @@ const FocusAreasSection = () => (
             className="bg-surface-alt p-10 group hover:bg-background transition-colors"
           >
             <div className="flex items-start gap-5">
-              <div className="w-12 h-12 border border-border flex items-center justify-center flex-shrink-0 group-hover:border-accent-warm group-hover:bg-accent-warm/5 transition-colors">
+              <div className="w-12 h-12 border border-border flex items-center justify-center flex-shrink-0 rounded-lg group-hover:border-accent-warm group-hover:bg-accent-warm/5 transition-colors">
                 <area.icon className="w-5 h-5 text-muted-foreground group-hover:text-accent-warm transition-colors" />
               </div>
               <div>

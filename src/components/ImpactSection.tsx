@@ -38,7 +38,7 @@ const ImpactSection = () => (
         ))}
       </div>
       {/* Desktop: grid */}
-      <div className="hidden md:grid md:grid-cols-3 gap-px bg-hero-foreground/10 mt-4">
+      <div className="hidden md:grid md:grid-cols-3 gap-px bg-hero-foreground/10 mt-4 rounded-xl overflow-hidden">
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}
