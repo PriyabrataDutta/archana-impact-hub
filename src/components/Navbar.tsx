@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoIcon from "@/assets/logo-icon.png";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -30,9 +31,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
       <div className="max-w-7xl mx-auto flex items-center justify-between h-16 md:h-20 px-5 lg:px-12">
         <a href="#" className="flex items-center gap-2.5">
-          <div className="w-10 h-10 rounded-full bg-accent-warm flex items-center justify-center">
-            <span className="font-display text-base font-bold text-accent-foreground">A</span>
-          </div>
+          <img src={logoIcon} alt="Archana Foundation" className="w-10 h-10 object-contain" />
           <span className={`font-display text-base md:text-lg tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-hero-foreground"}`}>
             Archana Foundation
           </span>
