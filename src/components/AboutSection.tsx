@@ -26,7 +26,7 @@ const AboutSection = () => (
           <img
             src={eyeCare}
             alt="Eye care camp"
-            className="w-full object-cover aspect-[16/10]"
+            className="w-full object-cover aspect-[16/10] rounded-xl"
             loading="lazy"
             width={800}
             height={600}
