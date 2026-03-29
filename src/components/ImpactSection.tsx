@@ -1,42 +1,38 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
-import { Eye, Glasses, Search, Shield, Ear, Smile, GraduationCap, TreePine } from "lucide-react";
 
 const stats = [
-  { icon: Eye, value: "10,000+", label: "Individuals Screened" },
-  { icon: Glasses, value: "3,000+", label: "Spectacles Provided" },
-  { icon: Search, value: "1,500+", label: "Cataracts Detected Early" },
-  { icon: Shield, value: "1,000+", label: "Glaucoma Suspects Identified" },
-  { icon: Ear, value: "1000s", label: "ENT Cases Treated" },
-  { icon: Smile, value: "5,000+", label: "Dental Screenings" },
-  { icon: GraduationCap, value: "500+", label: "Students Supported" },
-  { icon: TreePine, value: "100+", label: "Rural Camps Conducted" },
+  { value: "10,000+", label: "Individuals Screened", highlight: true },
+  { value: "3,000+", label: "Spectacles Provided" },
+  { value: "1,500+", label: "Cataracts Detected" },
+  { value: "1,000+", label: "Glaucoma Suspects" },
+  { value: "5,000+", label: "Dental Screenings" },
+  { value: "500+", label: "Students Supported" },
 ];
 
 const ImpactSection = () => (
-  <section id="impact" className="py-24 bg-surface-hero text-hero-foreground">
-    <div className="container mx-auto px-4">
+  <section id="impact" className="py-28 bg-surface-hero text-hero-foreground">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12">
       <SectionHeading
         label="Annual Goals"
-        title="Expected Annual Impact"
-        subtitle="With CSR and donor support, our programs aim to deliver measurable, life-changing outcomes."
+        title="Measurable, Life-Changing Outcomes"
+        subtitle="With CSR and donor support, our programs deliver scalable impact across healthcare and education."
         light
       />
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-hero-foreground/10 mt-4">
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.07 }}
-            className="text-center p-6 rounded-lg bg-hero-foreground/5 border border-hero-foreground/10"
+            transition={{ duration: 0.4, delay: i * 0.08 }}
+            className="bg-surface-hero p-8 md:p-10"
           >
-            <stat.icon className="w-7 h-7 text-accent-warm mx-auto mb-3" />
-            <div className="font-display text-2xl md:text-3xl font-bold text-accent-warm mb-1">
+            <div className={`font-display text-3xl md:text-4xl mb-2 ${stat.highlight ? "text-accent-warm" : "text-hero-foreground"}`}>
               {stat.value}
             </div>
-            <p className="text-sm text-hero-foreground/70">{stat.label}</p>
+            <p className="text-hero-foreground/50 text-xs tracking-[0.2em] uppercase">{stat.label}</p>
           </motion.div>
         ))}
       </div>

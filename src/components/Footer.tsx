@@ -1,9 +1,29 @@
 const Footer = () => (
-  <footer className="py-8 bg-primary-dark text-hero-foreground/60 text-sm">
-    <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p className="font-display font-semibold text-hero-foreground">Archana Foundation</p>
-      <p>© {new Date().getFullYear()} Archana Foundation. All rights reserved.</p>
-      <p>Eligible under Section 80G for tax benefits</p>
+  <footer className="py-12 bg-foreground">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12">
+      <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-8 pb-8 border-b border-background/10">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-full bg-accent-warm flex items-center justify-center">
+            <span className="font-display text-sm font-bold text-accent-foreground">A</span>
+          </div>
+          <span className="font-display text-lg text-background tracking-tight">Archana Foundation</span>
+        </div>
+        <div className="flex flex-wrap gap-8">
+          {["About", "Focus Areas", "Impact", "CSR", "Partner"].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase().replace(" ", "")}`}
+              className="text-background/40 text-xs tracking-widest uppercase hover:text-background/70 transition-colors"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-background/30 text-xs">
+        <p>© {new Date().getFullYear()} Archana Foundation. All rights reserved.</p>
+        <p className="tracking-wide">Eligible under Section 80G for tax benefits</p>
+      </div>
     </div>
   </footer>
 );

@@ -1,53 +1,57 @@
 import { motion } from "framer-motion";
 import SectionHeading from "./SectionHeading";
-import { Eye, Ear, Smile, GraduationCap } from "lucide-react";
+import { Eye, Ear, Smile, GraduationCap, type LucideIcon } from "lucide-react";
 
-const areas = [
+const areas: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: Eye,
     title: "Community Eye Care",
-    description: "Addressing preventable blindness through early detection, treatment, and awareness.",
+    description: "Addressing preventable blindness through early detection, treatment, and awareness across rural populations.",
   },
   {
     icon: Ear,
     title: "ENT Care",
-    description: "Screening and management of ear, nose, and throat conditions, especially in rural populations.",
+    description: "Screening and management of ear, nose, and throat conditions where access to specialist care is limited.",
   },
   {
     icon: Smile,
     title: "Dental Care",
-    description: "Promoting oral health through camps, preventive education, and basic dental treatments.",
+    description: "Promoting oral health through community camps, preventive education, and basic dental treatments.",
   },
   {
     icon: GraduationCap,
     title: "Education & Upliftment",
-    description: "Supporting underprivileged students, contributing to free hostel facilities, and enabling access to learning resources.",
+    description: "Supporting underprivileged students, free hostel facilities, and enabling access to learning resources.",
   },
 ];
 
 const FocusAreasSection = () => (
-  <section id="focus" className="py-24 bg-surface-alt">
-    <div className="container mx-auto px-4">
+  <section id="focus" className="py-28 bg-surface-alt">
+    <div className="max-w-7xl mx-auto px-6 lg:px-12">
       <SectionHeading
         label="What We Do"
         title="Our Focus Areas"
-        subtitle="We deliver integrated healthcare and educational support to underserved communities across India."
+        subtitle="Integrated healthcare and educational support for India's underserved communities."
       />
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+      <div className="grid md:grid-cols-2 gap-px bg-border mt-4">
         {areas.map((area, i) => (
           <motion.div
             key={area.title}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="bg-background rounded-lg p-6 shadow-sm border border-border hover:shadow-md transition-shadow group"
+            transition={{ duration: 0.4, delay: i * 0.1 }}
+            className="bg-surface-alt p-10 group hover:bg-background transition-colors"
           >
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-accent-warm/20 transition-colors">
-              <area.icon className="w-6 h-6 text-primary group-hover:text-accent-warm transition-colors" />
+            <div className="flex items-start gap-5">
+              <div className="w-12 h-12 border border-border flex items-center justify-center flex-shrink-0 group-hover:border-accent-warm group-hover:bg-accent-warm/5 transition-colors">
+                <area.icon className="w-5 h-5 text-muted-foreground group-hover:text-accent-warm transition-colors" />
+              </div>
+              <div>
+                <h3 className="font-display text-xl text-foreground mb-2">{area.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{area.description}</p>
+              </div>
             </div>
-            <h3 className="font-display text-lg font-semibold text-foreground mb-2">{area.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{area.description}</p>
           </motion.div>
         ))}
       </div>
