@@ -49,7 +49,7 @@ const Navbar = () => {
           ))}
           <a
             href="#partner"
-            className="bg-accent-warm text-accent-foreground px-6 py-2.5 text-[13px] font-semibold tracking-wide uppercase hover:brightness-110 transition-all"
+            className="bg-accent-warm text-accent-foreground px-6 py-2.5 text-[13px] font-semibold tracking-wide uppercase hover:brightness-110 transition-all rounded-lg"
           >
             Partner With Us
           </a>
@@ -90,7 +90,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="bg-accent-warm text-accent-foreground px-10 py-3.5 text-base font-semibold tracking-wide uppercase mt-4"
+                className="bg-accent-warm text-accent-foreground px-10 py-3.5 text-base font-semibold tracking-wide uppercase mt-4 rounded-lg"
                 onClick={() => setOpen(false)}
               >
                 Partner With Us

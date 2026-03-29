@@ -31,7 +31,7 @@ const AboutSection = () => (
             width={800}
             height={600}
           />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent px-5 pb-5 pt-12">
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-primary/90 to-transparent px-5 pb-5 pt-12 rounded-b-xl">
             <div className="font-display text-3xl text-primary-foreground">15+</div>
             <p className="text-primary-foreground/70 text-xs tracking-widest uppercase">Years of Impact</p>
           </div>
@@ -50,12 +50,12 @@ const AboutSection = () => (
             <img
               src={eyeCare}
               alt="Eye care camp"
-              className="w-full object-cover aspect-[3/4]"
+              className="w-full object-cover aspect-[3/4] rounded-xl"
               loading="lazy"
               width={800}
               height={600}
             />
-            <div className="absolute -bottom-6 -right-6 bg-primary px-8 py-6">
+            <div className="absolute -bottom-6 -right-6 bg-primary px-8 py-6 rounded-xl">
               <div className="font-display text-4xl text-primary-foreground">15+</div>
               <p className="text-primary-foreground/70 text-xs tracking-widest uppercase mt-1">Years of Impact</p>
             </div>

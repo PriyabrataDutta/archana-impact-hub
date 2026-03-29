@@ -16,7 +16,7 @@ const StorySection = () => (
           <img
             src={educationImg}
             alt="Children learning in classroom"
-            className="w-full object-cover aspect-[16/10]"
+            className="w-full object-cover aspect-[16/10] rounded-xl"
             loading="lazy"
             width={800}
             height={600}
@@ -35,7 +35,7 @@ const StorySection = () => (
           <img
             src={educationImg}
             alt="Children learning in classroom"
-            className="w-full object-cover aspect-[4/3]"
+            className="w-full object-cover aspect-[4/3] rounded-xl"
             loading="lazy"
             width={800}
             height={600}

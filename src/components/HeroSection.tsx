@@ -54,13 +54,13 @@ const HeroSection = () => (
         >
           <a
             href="#partner"
-            className="bg-accent-warm text-accent-foreground px-8 py-4 md:py-3.5 font-semibold text-[15px] tracking-wide hover:brightness-110 transition-all text-center"
+            className="bg-accent-warm text-accent-foreground px-8 py-4 md:py-3.5 font-semibold text-[15px] tracking-wide hover:brightness-110 transition-all text-center rounded-lg"
           >
             Partner With Us
           </a>
           <a
             href="#about"
-            className="border border-hero-foreground/20 text-hero-foreground px-8 py-4 md:py-3.5 font-medium text-[15px] tracking-wide hover:bg-hero-foreground/5 transition-colors text-center"
+            className="border border-hero-foreground/20 text-hero-foreground px-8 py-4 md:py-3.5 font-medium text-[15px] tracking-wide hover:bg-hero-foreground/5 transition-colors text-center rounded-lg"
           >
             Our Story
           </a>
@@ -72,7 +72,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.7 }}
-        className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-hero-foreground/10 border border-hero-foreground/10"
+        className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-hero-foreground/10 border border-hero-foreground/10 rounded-xl overflow-hidden"
       >
         {[
           { value: "15+", label: "Years of Service" },
