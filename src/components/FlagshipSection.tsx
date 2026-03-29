@@ -38,7 +38,9 @@ const FlagshipSection = () => (
           <div className="space-y-0 divide-y divide-border">
             {services.map((s) => (
               <div key={s.text} className="flex items-center gap-4 py-4 group">
-                <s.icon className="w-4 h-4 text-muted-foreground group-hover:text-accent-warm transition-colors flex-shrink-0" />
+                <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0 group-hover:bg-accent-warm/10 transition-colors">
+                  <s.icon className="w-[18px] h-[18px] text-primary group-hover:text-accent-warm transition-colors" />
+                </div>
                 <span className="text-foreground text-[15px]">{s.text}</span>
               </div>
             ))}
@@ -61,7 +63,7 @@ const FlagshipSection = () => (
           <div className="space-y-4">
             {techItems.map((t) => (
               <div key={t} className="flex items-center gap-3">
-                <ArrowRight className="w-3 h-3 text-accent-warm flex-shrink-0" />
+                <ArrowRight className="w-4 h-4 text-accent-warm flex-shrink-0" />
                 <span className="text-primary-foreground/90 text-sm">{t}</span>
               </div>
             ))}

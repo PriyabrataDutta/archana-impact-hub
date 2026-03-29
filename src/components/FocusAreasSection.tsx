@@ -44,8 +44,8 @@ const FocusAreasSection = () => (
             transition={{ duration: 0.4, delay: i * 0.08 }}
             className="border-l-2 border-accent-warm bg-background p-5 flex gap-4 rounded-lg"
           >
-            <div className="w-10 h-10 border border-border flex items-center justify-center flex-shrink-0 rounded-lg">
-              <area.icon className="w-4 h-4 text-accent-warm" />
+            <div className="w-12 h-12 border border-border flex items-center justify-center flex-shrink-0 rounded-lg bg-accent-warm/5">
+              <area.icon className="w-5 h-5 text-accent-warm" />
             </div>
             <div>
               <h3 className="font-display text-lg text-foreground mb-1">{area.title}</h3>
@@ -66,8 +66,8 @@ const FocusAreasSection = () => (
             className="bg-surface-alt p-10 group hover:bg-background transition-colors"
           >
             <div className="flex items-start gap-5">
-              <div className="w-12 h-12 border border-border flex items-center justify-center flex-shrink-0 rounded-lg group-hover:border-accent-warm group-hover:bg-accent-warm/5 transition-colors">
-                <area.icon className="w-5 h-5 text-muted-foreground group-hover:text-accent-warm transition-colors" />
+              <div className="w-14 h-14 border border-border flex items-center justify-center flex-shrink-0 rounded-xl group-hover:border-accent-warm group-hover:bg-accent-warm/5 transition-colors">
+                <area.icon className="w-6 h-6 text-muted-foreground group-hover:text-accent-warm transition-colors" />
               </div>
               <div>
                 <h3 className="font-display text-xl text-foreground mb-2">{area.title}</h3>

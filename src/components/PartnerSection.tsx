@@ -40,15 +40,21 @@ const PartnerSection = () => (
           <h3 className="font-display text-xl md:text-2xl text-primary-foreground mb-6 md:mb-8">Contact Us</h3>
           <div className="space-y-5 md:space-y-6 mb-8 md:mb-10">
             <div className="flex items-center gap-4">
-              <Phone className="w-4 h-4 text-accent-warm flex-shrink-0" />
+              <div className="w-10 h-10 rounded-lg bg-accent-warm/10 flex items-center justify-center flex-shrink-0">
+                <Phone className="w-5 h-5 text-accent-warm" />
+              </div>
               <span className="text-primary-foreground/70 text-sm md:text-[15px]">Contact number coming soon</span>
             </div>
             <div className="flex items-center gap-4">
-              <Mail className="w-4 h-4 text-accent-warm flex-shrink-0" />
+              <div className="w-10 h-10 rounded-lg bg-accent-warm/10 flex items-center justify-center flex-shrink-0">
+                <Mail className="w-5 h-5 text-accent-warm" />
+              </div>
               <span className="text-primary-foreground/70 text-sm md:text-[15px]">Email coming soon</span>
             </div>
             <div className="flex items-center gap-4">
-              <Globe className="w-4 h-4 text-accent-warm flex-shrink-0" />
+              <div className="w-10 h-10 rounded-lg bg-accent-warm/10 flex items-center justify-center flex-shrink-0">
+                <Globe className="w-5 h-5 text-accent-warm" />
+              </div>
               <a href="https://www.archanafoundation.org" target="_blank" rel="noopener noreferrer" className="text-accent-warm text-sm md:text-[15px] hover:underline break-all">
                 www.archanafoundation.org
               </a>
@@ -58,7 +64,7 @@ const PartnerSection = () => (
             href="mailto:info@archanafoundation.org"
             className="flex items-center justify-center gap-2 w-full bg-accent-warm text-accent-foreground px-8 py-4 font-semibold text-[15px] tracking-wide hover:brightness-110 transition-all rounded-lg"
           >
-            Reach Out Today <ArrowRight className="w-4 h-4" />
+            Reach Out Today <ArrowRight className="w-5 h-5" />
           </a>
         </motion.div>
       </div>
