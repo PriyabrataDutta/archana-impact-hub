@@ -2,15 +2,35 @@ import { motion } from "framer-motion";
 import educationImg from "@/assets/education.jpg";
 
 const StorySection = () => (
-  <section className="py-28 bg-surface-alt overflow-hidden">
-    <div className="max-w-7xl mx-auto px-6 lg:px-12">
-      <div className="grid lg:grid-cols-12 gap-16 items-center">
+  <section className="py-16 md:py-28 bg-surface-alt overflow-hidden">
+    <div className="max-w-7xl mx-auto px-5 lg:px-12">
+      {/* Mobile: image bleeds wider */}
+      <div className="lg:hidden -mx-5 mb-8">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="relative"
+        >
+          <img
+            src={educationImg}
+            alt="Children learning in classroom"
+            className="w-full object-cover aspect-[16/10]"
+            loading="lazy"
+            width={800}
+            height={600}
+          />
+        </motion.div>
+      </div>
+
+      <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="lg:col-span-6"
+          className="hidden lg:block lg:col-span-6"
         >
           <img
             src={educationImg}
@@ -22,17 +42,17 @@ const StorySection = () => (
           />
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="lg:col-span-6"
         >
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-5">
             <div className="w-8 h-[1px] bg-accent-warm" />
             <p className="text-accent-warm text-[11px] font-semibold tracking-[0.25em] uppercase">A Life Changed</p>
           </div>
-          <h2 className="font-display text-3xl md:text-4xl text-foreground leading-tight mb-6 tracking-tight">
+          <h2 className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground leading-tight mb-5 tracking-tight">
             Healthcare Restores Ability.
             <br />
             <span className="text-accent-warm italic">Education Builds the Future.</span>

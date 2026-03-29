@@ -20,14 +20,20 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-transparent"}`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between h-20 px-6 lg:px-12">
-        <a href="#" className="flex items-center gap-3">
+      <div className="max-w-7xl mx-auto flex items-center justify-between h-16 md:h-20 px-5 lg:px-12">
+        <a href="#" className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-full bg-accent-warm flex items-center justify-center">
             <span className="font-display text-sm font-bold text-accent-foreground">A</span>
           </div>
-          <span className={`font-display text-lg tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-hero-foreground"}`}>
+          <span className={`font-display text-base md:text-lg tracking-tight transition-colors ${scrolled ? "text-foreground" : "text-hero-foreground"}`}>
             Archana Foundation
           </span>
         </a>
@@ -49,39 +55,46 @@ const Navbar = () => {
           </a>
         </div>
         <button
-          className={`lg:hidden transition-colors ${scrolled ? "text-foreground" : "text-hero-foreground"}`}
+          className={`lg:hidden transition-colors z-50 ${scrolled || open ? "text-foreground" : "text-hero-foreground"}`}
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={22} /> : <Menu size={22} />}
+          {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            className="lg:hidden overflow-hidden bg-background border-b border-border"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="lg:hidden fixed inset-0 top-0 bg-background z-40 flex flex-col"
           >
-            <div className="flex flex-col px-6 py-6 gap-4">
-              {navItems.map((item) => (
-                <a
+            <div className="flex flex-col justify-center items-center flex-1 gap-6 px-8">
+              {navItems.map((item, i) => (
+                <motion.a
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground py-1 tracking-wide uppercase"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 + i * 0.05 }}
+                  className="font-display text-2xl text-foreground hover:text-accent-warm transition-colors"
                   onClick={() => setOpen(false)}
                 >
                   {item.label}
-                </a>
+                </motion.a>
               ))}
-              <a
+              <motion.a
                 href="#partner"
-                className="bg-accent-warm text-accent-foreground px-6 py-2.5 text-sm font-semibold text-center tracking-wide uppercase mt-2"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="bg-accent-warm text-accent-foreground px-10 py-3.5 text-base font-semibold tracking-wide uppercase mt-4"
                 onClick={() => setOpen(false)}
               >
                 Partner With Us
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         )}
